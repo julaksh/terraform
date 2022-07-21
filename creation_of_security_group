@@ -1,0 +1,28 @@
+provider "aws" {
+}
+
+
+resource "aws_security_group" "anynamehere" {
+  name        = "xxxxxxx"
+  description = "xxxxxxx"
+  vpc_id      = "useyourdefaultone"
+
+  ingress{
+    description = "xxxxxxx"
+    from_port   = "number"
+    to_port     = "number"
+    protocol    = "tcp/anyother" 
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+ 
+  egress{
+    description = "xxxxxxx"
+    from_port   = "number"
+    to_port     = "number"
+    protocol    = "tcp/anyother"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+
+
+}

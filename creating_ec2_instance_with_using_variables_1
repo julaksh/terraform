@@ -1,0 +1,19 @@
+provider "aws"  {
+ region = "ap-south-1"
+ access_key = "xxxxx"
+ secret_key = "xxxxx"
+}
+
+
+resource "aws_instance"  "anyname" {
+ count = "3"
+ ami = "${var.abc}"
+ instance_type = "${var.xyz}"
+ security_groups = ["nameofexsistingsecuritygroup"]
+ key_name = "nameofthepemfile"
+ tags = {
+   Name = "requiredname"
+ }
+
+}
+

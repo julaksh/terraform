@@ -1,0 +1,7 @@
+variable "user_name" {
+  description = "xxxxxxx"
+  type = list(string)
+  default = ["ramu","raju",
+
+}
+  

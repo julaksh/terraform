@@ -1,0 +1,24 @@
+provider "aws"  {
+}
+
+
+provider "aws"  {
+ region = "ap-south-1"
+ access_key = "xxxxx"
+ secret_key = "xxxxx"
+}
+
+
+resource "aws_instance"  "anyname" {
+ count = "3"
+ ami = "ami-xxxxxx"
+ instance_type = "t2.micro"
+ security_groups = ["nameofexsistingsecuritygroup"]
+ key_name = "nameofthepemfile"
+ user_data = "${file("nameoftheshellscript.sh")}"
+ tags = {
+   Name = "requiredname"
+ }
+ user_data
+}
+
